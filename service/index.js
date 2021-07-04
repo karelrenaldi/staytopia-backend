@@ -1,5 +1,5 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
+import moment from 'moment';
 import puppeteer from 'puppeteer';
 
 export const scrapAgoda = async (url, maxReviewCount = 5) => {
@@ -12,8 +12,75 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
     .join('')
   
   let hotelData = {}
-  
+
+  // get general data
+  try {
+    const browser = await puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+    await page.goto(url);
+
+    await page.waitForSelector('[data-selenium="hotel-header-name"]');
+
+    let element = await page.$('[data-selenium="hotel-header-name"]');
+    hotelData.name = await page.evaluate(el => el.textContent, element);
+
+    await page.waitForSelector('[data-selenium="hotel-address-map"]');
+    element = await page.$('[data-selenium="hotel-address-map"]');
+    hotelData.address = await page.evaluate(el => el.textContent, element);
+
+    hotelData.handleCovid = false;
+
+    await page.waitForSelector('[data-selenium="breadcrumb-region-name"]');
+    element = await page.$('[data-selenium="breadcrumb-region-name"]');
+    hotelData.city = await page.evaluate(el => el.textContent.replace(' Hotels', ''), element);
+
+    // agoda only supports hotel
+    hotelData.category = 'hotel'
+
+    hotelData.source = 'agoda';
+
+    await page.waitForSelector('.SquareImage');
+    hotelData.photos = await page.$$eval('.SquareImage',
+      imgs => imgs.map(img => img.getAttribute('src'))
+    );
+
+    hotelData.photos = hotelData.photos.map(img => 'https:' + img);
+
+    await page.waitForSelector('[data-selenium="hotel-header-review-score"]');
+    element = await page.$('[data-selenium="hotel-header-review-score"]');
+    hotelData.averageRating = await page.evaluate(el => Number(el.textContent) / 2, element);
+
+    await page.goto(`${url}?checkIn=${moment().format('YYYY-MM-DD')}&checkOut=${moment().add(1, 'd').format('YYYY-MM-DD')}`)
+
+    // check in date
+    await page.waitForSelector(`[aria-label="${moment().format('ddd MMM DD YYYY')}"]`);
+    await page.click(`[aria-label="${moment().format('ddd MMM DD YYYY')}"]`)
+
+    // check out date
+    await page.waitForSelector(`[aria-label="${moment().add(1, 'd').format('ddd MMM DD YYYY')}"]`);
+    await page.click(`[aria-label="${moment().add(1, 'd').format('ddd MMM DD YYYY')}"]`)
+
+    await page.click('[data-selenium="searchButton"]');
+
+    await page.waitForSelector('[data-ppapi="room-price"]');
+    element = await page.$('[data-ppapi="room-price"]');
+    const ota = {
+      price: await page.evaluate(el => Number(el.textContent.replace(/\D/g, '')), element),
+      provider: 'agoda',
+      link: url
+    }
+
+    hotelData.ota = [ota];
+
+    await browser.close();
+  } catch (err) {
+    console.log(err)
+  }
+
   // scrap agoda reviews
+  const reviews = []
+  let i = 0;
+
   const { data } = await axios.post('https://www.agoda.com/api/cronos/property/review/HotelReviews', {
     "hotelId": Number(hotel_id),
     "demographicId": 0,
@@ -24,20 +91,6 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
     "isCrawlablePage": true,
     "paginationSize": 5
   })
-
-  hotelData.name = data.hotelName;
-  hotelData.address = 'unscrapable';
-  hotelData.handleCovid = false;
-  hotelData.city = 'unscrapable';
-  hotelData.category = 'unscrapable';
-  hotelData.source = 'agoda';
-  hotelData.photos = 'unscrapable';
-  hotelData.averageRating = data.combinedReview.score.score / 2;
-
-  hotelData.ota = [];
-
-  const reviews = []
-  let i = 0;
 
   for (const r of data.commentList.comments) {
     // kata dalam review harus diatas 10 dan belum mencapai max review
@@ -55,8 +108,6 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
   }
 
   hotelData.reviews = reviews;
-
-  console.log(hotelData)
 
   return hotelData;
 }
@@ -92,7 +143,7 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
 
     await page.waitForSelector('.property-type');
     element = await page.$('.property-type');
-    hotelData.category = await page.evaluate(el => el.textContent, element);
+    hotelData.category = await page.evaluate(el => el.textContent.toLowerCase(), element);
 
     hotelData.source = 'tiket';
 

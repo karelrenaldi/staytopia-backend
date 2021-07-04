@@ -9,10 +9,10 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.10",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "mongodb": "^3.6.9",
     "mongoose": "^5.13.2",
     "puppeteer": "^10.1.0",
