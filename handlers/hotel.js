@@ -115,7 +115,7 @@ export const retrieveHotel = async(req, res) => {
   const limit = DEFAULT_LIMIT;
   const skip = (page - 1) * limit;
 
-  try{
+  try {
     const [pageItems, totalAllItems] = await Promise.all([
       Hotel.find().skip(skip).limit(limit),
       Hotel.countDocuments(),
@@ -185,9 +185,10 @@ export const retrieveSpesificHotel = async(req, res) => {
 }
 
 export const getRecommendationHotel = async (req, res) => {
-  const { query } = req.query;
+  const { recommendations } = req.body;
+  console.log(recommendations)
 
-  if (!query.length) {
+  if (!recommendations.length) {
     return res.json({
       apiVersion: API_VERSION,
       data: {
@@ -197,7 +198,7 @@ export const getRecommendationHotel = async (req, res) => {
     });
   }
 
-  const formattedQuery = JSON.parse(query).map(q => '- ' + q).join('\n')
+  const formattedQuery = recommendations.map(q => '- ' + q).join('\n')
 
   const recommendedHotels = await recommendation(formattedQuery, 'babbage');
 

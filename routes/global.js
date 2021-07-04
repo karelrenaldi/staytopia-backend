@@ -6,9 +6,10 @@ import { devHandler } from '../handlers/dev';
 
 const globalRouter = Router();
 
+globalRouter.post('/recommendation-hotels', getRecommendationHotel);
+
 globalRouter.get('/hotels/:hotelId', retrieveSpesificHotel);
 globalRouter.route('/hotels/').get(retrieveHotel).post(createHotel);
-globalRouter.get('/hotels/recommendation').get(getRecommendationHotel);
 
 globalRouter.post('/translate/', translateText);
 
