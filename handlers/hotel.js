@@ -1,27 +1,89 @@
 import mongodb from 'mongodb';
 
 import Hotel, { isHotel } from '../models/Hotel';
-import { DEFAULT_PAGE, API_VERSION, DEFAULT_LIMIT } from '../configs/server';
+import { DEFAULT_PAGE, API_VERSION, DEFAULT_LIMIT, TIKET_MAX_REVIEW, AGODA_MAX_REVIEW } from '../configs/server';
+import { formatReviewSummary, generatePrompt, gpt3, scrapAgoda, scrapTiket } from '../service';
 
 const { ObjectID } = mongodb;
 
+const validateLink = (url) => {
+  const parsedUrl = new URL(url);
+
+  if (!parsedUrl.host.includes('agoda.com') && !parsedUrl.host.includes('tiket.com')) {
+    throw new Error('invalid url');
+  }
+
+  const parsedPathname = parsedUrl.pathname.split('/').filter(p => p);
+
+  if (parsedUrl.host.includes('agoda.com')
+    && parsedPathname.length === 3
+    && parsedPathname[1] === 'hotel'
+    && parsedUrl.pathname.endsWith('.html')
+  ) {
+    return parsedUrl.origin + parsedUrl.pathname;
+  }
+
+  if (parsedUrl.host.includes('tiket.com')
+    && parsedPathname.length === 3
+    && parsedPathname[0] === 'hotel'
+  ) {
+    return parsedUrl.origin + parsedUrl.pathname;
+  }
+
+  throw new Error('invalid url');
+}
+
 export const createHotel = async(req, res) => {
-  const data = req.body;
+  const { url, source } = req.body;
 
-  if(!isHotel(data)) return res.status(400).json({
-    apiVersion: API_VERSION,
-    error: {
-      code: 400,
-      message: 'Invalid body request!',
+  if (source !== 'agoda' && source !== 'tiket') {
+    return res.status(400).json({
+      apiVersion: API_VERSION,
+      error: {
+        code: 400,
+        message: 'Invalid body request!',
+      }
+    })
+  }
+
+  let parsedUrl;
+
+  try {
+    parsedUrl = validateLink(url);
+
+    if (!parsedUrl.includes(source)) {
+      throw new Error('invalid url')
     }
-  });
 
-  try{
-    const newHotel = await Hotel.create(data);
+  } catch (err) {
+    return res.status(400).json({
+      apiVersion: API_VERSION,
+      error: {
+        code: 400,
+        message: `Invalid URL for ${source}!`,
+      }
+    })
+  }
+
+  try {
+    let hotel;
+
+    if (source === 'agoda') {
+      hotel = await scrapAgoda(parsedUrl, AGODA_MAX_REVIEW)
+    } else if (source === 'tiket') {
+      hotel = await scrapTiket(parsedUrl, TIKET_MAX_REVIEW)
+    }
+
+    const prompt = await generatePrompt(hotel.name, hotel.reviews);
+    const summary = await gpt3(prompt, 'curie');
+
+    hotel.reviewSummary = await formatReviewSummary(summary, source);
+
+    const hotelDocument = await Hotel.create(hotel)
 
     return res.json({
       apiVersion: API_VERSION,
-      data : newHotel,
+      data: hotelDocument
     });
   }catch(err){
     console.log("Error when trying to create new hotel!");

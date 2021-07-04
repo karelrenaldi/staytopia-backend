@@ -75,6 +75,11 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
 
     hotelData.ota = [ota];
 
+    await page.waitForSelector('[data-selenium="hotel-header-review-score"]');
+    element = await page.$('[data-selenium="hotel-header-review-score"]');
+    hotelData.averageRating = await page.evaluate(el => el.textContent, element);
+    hotelData.averageRating = parseFloat(hotelData.averageRating) / 2;
+
     await browser.close();
   } catch (err) {
     console.log(err)
@@ -95,7 +100,9 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
     "paginationSize": 5
   })
 
-  hotelData.averageRating = data.combinedReview.score.score / 2;
+  // console.log(data)
+
+  // hotelData.averageRating = data.combinedReview.score.score / 2;
 
   for (const r of data.commentList.comments) {
     // kata dalam review harus diatas 10 dan belum mencapai max review
@@ -200,19 +207,21 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
     }]
   )
 
-  for (const r of data[0].data.getInternalReview.data.userReviews.content) {
-    const reviewContent = r.comments.find(val => val.questionCode === 'comment').value;
-    // kata dalam review harus diatas 10 dan belum mencapai max review
-    if (reviewContent.split(' ').length > 10 && i < maxReviewCount) {
-      const review = {
-        comment: reviewContent,
-        name: r.customerName,
-        source: 'tiket',
-        reviewDate: new Date(Number(r.reviewDate)),
+  if (data[0].data.getInternalReview) {
+    for (const r of data[0].data.getInternalReview.data.userReviews.content) {
+      const reviewContent = r.comments.find(val => val.questionCode === 'comment').value;
+      // kata dalam review harus diatas 10 dan belum mencapai max review
+      if (reviewContent.split(' ').length > 10 && i < maxReviewCount) {
+        const review = {
+          comment: reviewContent,
+          name: r.customerName,
+          source: 'tiket',
+          reviewDate: new Date(Number(r.reviewDate)),
+        }
+  
+        reviews.push(review);
+        i++;
       }
-
-      reviews.push(review);
-      i++;
     }
   }
 
@@ -222,6 +231,10 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
 }
 
 export const generatePrompt = async (hotel_name, reviews) => {
+  if (reviews.length === 0) {
+    return '';
+  }
+
   let result = `These are the reviews for ${hotel_name}:\n`;
   let i = 1;
 
@@ -248,6 +261,10 @@ export const generatePrompt = async (hotel_name, reviews) => {
 }
 
 export const formatReviewSummary = async (text, source) => {
+  if (text === '') {
+    return []
+  }
+
   const result = text.split('\n').filter(t => t).map(t => t.replace(/- /g, ''));
   if (source === 'agoda') return result;
 
@@ -266,6 +283,10 @@ export const formatReviewSummary = async (text, source) => {
 }
 
 export const gpt3 = async (prompt, engine = 'davinci') => {
+  if (prompt === '') {
+    return '';
+  }
+
   const INITIAL_PROMPT = fs.readFileSync('./configs/initialPrompt.txt', 'utf-8');
 
   const res = await axios.post(`https://api.openai.com/v1/engines/${engine}/completions`, {
