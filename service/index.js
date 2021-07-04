@@ -1,3 +1,4 @@
+import fs from 'fs';
 import axios from 'axios';
 import moment from 'moment';
 import puppeteer from 'puppeteer';
@@ -50,7 +51,7 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
 
     await page.waitForSelector('[data-selenium="hotel-header-review-score"]');
     element = await page.$('[data-selenium="hotel-header-review-score"]');
-    hotelData.averageRating = await page.evaluate(el => Number(el.textContent) / 2, element);
+    hotelData.averageRating = await page.evaluate(el => Number(el.textContent.replace(/,/g, '.')) / 2, element);
 
     await page.goto(`${url}?checkIn=${moment().format('YYYY-MM-DD')}&checkOut=${moment().add(1, 'd').format('YYYY-MM-DD')}`)
 
@@ -215,7 +216,7 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
 }
 
 export const generatePrompt = async (hotel_name, reviews) => {
-  let result = `These is the reviews for ${hotel_name}:\n`;
+  let result = `These are the reviews for ${hotel_name}:\n`;
   let i = 1;
 
   for (const review of reviews) {
@@ -240,6 +241,27 @@ export const generatePrompt = async (hotel_name, reviews) => {
   return result;
 }
 
-export const gpt3 = async (prompt) => {
+export const formatSummary = (text) => {
+  return text.split('\n').filter(t => t).map(t => t.replace(/- /g, ''))
+}
 
+export const gpt3 = async (prompt, engine = 'davinci') => {
+  const INITIAL_PROMPT = fs.readFileSync('./configs/initialPrompt.txt', 'utf-8');
+
+  const res = await axios.post(`https://api.openai.com/v1/engines/${engine}/completions`, {
+    prompt: INITIAL_PROMPT + prompt,
+    max_tokens: 150,
+    temperature: 0.3,
+    top_p: 1,
+    n: 1,
+    frequency_penalty: 1,
+    stream: false,
+    stop: '###',
+  }, {
+    headers: {
+      Authorization: `Bearer ${process.env.GPT3_KEY}`
+    }
+  })
+
+  return res.data.choices[0].text;
 }
