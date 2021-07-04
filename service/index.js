@@ -1,6 +1,8 @@
 import axios from 'axios';
 import moment from 'moment';
 import puppeteer from 'puppeteer';
+import translate from 'translate';
+import { TRANSLATE_ENGINE } from '../configs/server';
 
 export const scrapAgoda = async (url, maxReviewCount = 5) => {
   const pageRes = await axios.get(url);
@@ -210,6 +212,32 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
   hotelData.reviews = reviews;
 
   return hotelData;
+}
+
+export const generatePrompt = async (hotel_name, reviews) => {
+  let result = `These is the reviews for ${hotel_name}:\n`;
+  let i = 1;
+
+  for (const review of reviews) {
+    result += `\n${i}.${review.name}'s review:\n`;
+
+    // jika dari tiket.com maka bahasa indo
+    if (review.source === 'tiket') {
+      result += await translate(review.comment, {
+        engine: TRANSLATE_ENGINE,
+        from: 'id',
+        to: 'en',
+        key: process.env.TRANSLATE_KEY,
+      }) + '\n';
+    } else {
+      result += `${review.comment}\n`
+    }
+
+    i += 1;
+  }
+
+  result += `\nI summarized these reviews for my customers:`
+  return result;
 }
 
 export const gpt3 = async (prompt) => {
