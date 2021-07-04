@@ -40,10 +40,7 @@ const HotelSchema = new mongoose.Schema({
   category: {
     type: String,
     required: [true, "A hotel must have a category"],
-    enum: {
-      values: ["hotel", "villa", "unscrapable"],
-      message: "Category must be hotel or villa",
-    },
+    trim: true,
   },
   source: {
     type: String,
