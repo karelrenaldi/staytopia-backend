@@ -23,6 +23,15 @@ const HotelSchema = new mongoose.Schema({
     required: [true, "A hotel must have a name"],
     trim: true,
   },
+  address: {
+    type: String,
+    required: [true, "A hotel must have a name"],
+    trim: true,
+  },
+  handleCovid: {
+    type: Boolean,
+    default: false,
+  },
   city: {
     type: String,
     required: [true, "A hotel must have a city"],
@@ -67,6 +76,7 @@ export const isHotel = (input) => {
     if(typeof input.city !== 'string') return false;
     if(typeof input.category !== 'string') return false;
     if(typeof input.source !== 'string') return false;
+    if(typeof input.city !== 'string') return false;
 
     if(typeof input.photos !== 'object') return false;
     if(typeof input.ota !== 'object') return false;

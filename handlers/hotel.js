@@ -1,7 +1,7 @@
 import mongodb from 'mongodb';
 
 import Hotel, { isHotel } from '../models/Hotel';
-import { API_VERSION } from '../configs/server';
+import { DEFAULT_PAGE, API_VERSION, DEFAULT_LIMIT } from '../configs/server';
 
 const { ObjectID } = mongodb;
 
@@ -34,6 +34,40 @@ export const createHotel = async(req, res) => {
         message: 'Internal server error when create new hotel!',
       }
     });
+  }
+}
+
+export const retrieveHotel = async(req, res) => {
+  const page = isNaN(parseInt(req.query.page, 10)) ? DEFAULT_PAGE : parseInt(req.query.page, 10);
+  const limit = DEFAULT_LIMIT;
+  const skip = (page - 1) * limit;
+
+  try{
+    const [pageItems, totalAllItems] = await Promise.all([
+      Hotel.find().skip(skip).limit(limit),
+      Hotel.countDocuments(),
+    ]);
+
+    return res.json({
+      apiVersion: API_VERSION,
+      data : {
+        totalItems: totalAllItems,
+        startIndex: page,
+        itemsPerPage: pageItems.length,
+        items: pageItems,
+      }
+    });
+  }catch(err){
+    console.log("Error when trying to retrieve hotels");
+    console.log(err);
+
+    return res.status(500).json({
+      apiVersion: API_VERSION,
+      error: {
+        code: 500,
+        message: 'Internal server error when retrieve hotels',
+      }
+    })
   }
 }
 
