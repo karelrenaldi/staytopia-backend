@@ -5,6 +5,15 @@ import { DEFAULT_PAGE, API_VERSION, DEFAULT_LIMIT } from '../configs/server';
 
 const { ObjectID } = mongodb;
 
+export const migrateHotel = async(req, res) => {
+  try{
+    await Hotel.create(req.body);
+    res.json({message: 'success'})
+  }catch(err){
+    res.status(500).json({message : 'error'})
+  }
+}
+
 export const createHotel = async(req, res) => {
   const data = req.body;
 
