@@ -241,8 +241,22 @@ export const generatePrompt = async (hotel_name, reviews) => {
   return result;
 }
 
-export const formatSummary = (text) => {
-  return text.split('\n').filter(t => t).map(t => t.replace(/- /g, ''))
+export const formatReviewSummary = async (text, source) => {
+  const result = text.split('\n').filter(t => t).map(t => t.replace(/- /g, ''));
+  if (source === 'agoda') return result;
+
+  const translatedResult = [];
+  for (let t of result) {
+    translatedResult.push(
+      await translate(t, {
+        engine: TRANSLATE_ENGINE,
+        from: 'en',
+        to: 'id',
+        key: process.env.TRANSLATE_KEY,
+      })
+    )
+  }
+  return translatedResult
 }
 
 export const gpt3 = async (prompt, engine = 'davinci') => {

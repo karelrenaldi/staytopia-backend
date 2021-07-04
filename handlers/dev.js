@@ -10,6 +10,6 @@ export const devHandler = async (req, res) => {
 
   res.json({
     apiVersion: API_VERSION,
-    data: formatSummary(summary)
+    data: await formatSummary(summary)
   })
 }
