@@ -354,3 +354,52 @@ export const uploadSummary = async (filename, summary) => {
     }, 3000)
   })
 }
+
+export const recommendation = async (query, engine = 'babbage') => {
+  const allHotels = await Hotel.find({})
+
+  // const allHotelSummaryFileId = allHotels.map(hotel => hotel.summaryFileId).filter(id => id)
+  const allReviewSummaries = []
+  for (const hotel of allHotels) {
+    if (hotel.source === 'tiket') {
+      const translatedResult = [];
+
+      for (let t of hotel.reviewSummary) {
+        translatedResult.push(
+          await translate(t, {
+            engine: TRANSLATE_ENGINE,
+            from: 'id',
+            to: 'en',
+            key: process.env.TRANSLATE_KEY,
+          })
+        )
+      }
+
+      allReviewSummaries.push(translatedResult.map(s => '- ' + s).join('\n'));
+    } else {
+      allReviewSummaries.push(hotel.reviewSummary.map(s => '- ' + s).join('\n'));
+    }
+  }
+
+  try {
+    const { data } = await axios.post(`https://api.openai.com/v1/engines/${engine}/search`, {
+      documents: allReviewSummaries,
+      query,
+    }, {
+      headers: {
+        Authorization: `Bearer ${process.env.GPT3_KEY}`
+      }
+    })
+    
+    const rank = data.data.sort((a, b) => b.score - a.score).filter(a => a.score >= 140)
+
+    const resultHotels = []
+    for (const r of rank) {
+      resultHotels.push(allHotels[r.document])
+    }
+    
+    return resultHotels
+  } catch (err) {
+    console.log(err)
+  }
+}

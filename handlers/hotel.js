@@ -1,8 +1,8 @@
 import mongodb from 'mongodb';
 
-import Hotel, { isHotel } from '../models/Hotel';
+import Hotel from '../models/Hotel';
 import { DEFAULT_PAGE, API_VERSION, DEFAULT_LIMIT, TIKET_MAX_REVIEW, AGODA_MAX_REVIEW } from '../configs/server';
-import { formatReviewSummary, generatePrompt, gpt3, scrapAgoda, scrapTiket, uploadSummary } from '../service';
+import { formatReviewSummary, generatePrompt, gpt3, recommendation, scrapAgoda, scrapTiket, uploadSummary } from '../service';
 
 const { ObjectID } = mongodb;
 
@@ -90,7 +90,7 @@ export const createHotel = async(req, res) => {
 
     const hotelDocument = await Hotel.create(hotel)
 
-    await uploadSummary(`${hotelDocument._id}.jsonl`, hotelDocument.reviewSummary)
+    // await uploadSummary(`${hotelDocument._id}.jsonl`, hotelDocument.reviewSummary)
 
     return res.json({
       apiVersion: API_VERSION,
@@ -182,4 +182,30 @@ export const retrieveSpesificHotel = async(req, res) => {
       }
     });
   }
+}
+
+export const getRecommendationHotel = async (req, res) => {
+  const { query } = req.query;
+
+  if (!query.length) {
+    return res.json({
+      apiVersion: API_VERSION,
+      data: {
+        totalItems: 0,
+        items: [],
+      }
+    });
+  }
+
+  const formattedQuery = query.map(q => '- ' + q).join('\n')
+
+  const recommendedHotels = await recommendation(formattedQuery, 'babbage');
+
+  return res.json({
+    apiVersion: API_VERSION,
+    data: {
+      totalItems: recommendedHotels.length,
+      items: recommendedHotels,
+    }
+  });
 }
