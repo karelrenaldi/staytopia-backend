@@ -4,6 +4,7 @@ import moment from 'moment';
 import puppeteer from 'puppeteer';
 import translate from 'translate';
 import _ from 'lodash';
+import Hotel from '../models/Hotel';
 import { TRANSLATE_ENGINE } from '../configs/server';
 
 export const scrapAgoda = async (url, maxReviewCount = 5) => {
@@ -305,4 +306,51 @@ export const gpt3 = async (prompt, engine = 'davinci') => {
   })
 
   return res.data.choices[0].text;
+}
+
+export const uploadSummary = async (filename, summary) => {
+  return new Promise((resolve, reject) => {
+    if (summary.length === 0) {
+      return false;
+    }
+
+    let result = '';
+    for (const s of summary) {
+      result += `{ "text": "${s}", "metadata": "" }\n`
+    }
+    fs.writeFileSync(`./temp/${filename}`, result);
+
+    const spawn = require("child_process").spawn;
+    const pythonProcess = spawn('python', ["./service/upload.py", filename, process.env.GPT3_KEY]);
+
+    pythonProcess.stdout.on('data', (data) => {
+      console.log(data.toString());
+    });
+    pythonProcess.stderr.on('data', (data) => {
+      console.error(data.toString());
+    });
+
+    setTimeout(async () => {
+      try {
+        const { data } = await axios.get('https://api.openai.com/v1/files', {
+          headers: {
+            Authorization: `Bearer ${process.env.GPT3_KEY}`
+          }
+        })
+    
+        fs.unlinkSync(`./temp/${filename}`)
+        
+        await Hotel.findByIdAndUpdate(filename.replace('.jsonl', ''), {
+          $set: {
+            summaryFileId: data.data.find(d => d.filename === filename).id,
+          }
+        })
+
+        resolve(data.data.find(d => d.filename === filename).id)
+      } catch (err) {
+        console.log(err);
+        reject()
+      }
+    }, 3000)
+  })
 }
