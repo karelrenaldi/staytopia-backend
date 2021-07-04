@@ -1,7 +1,9 @@
+import fs from 'fs';
 import axios from 'axios';
 import moment from 'moment';
 import puppeteer from 'puppeteer';
 import translate from 'translate';
+import _ from 'lodash';
 import { TRANSLATE_ENGINE } from '../configs/server';
 
 export const scrapAgoda = async (url, maxReviewCount = 5) => {
@@ -32,9 +34,12 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
 
     hotelData.handleCovid = false;
 
-    await page.waitForSelector('[data-selenium="breadcrumb-region-name"]');
-    element = await page.$('[data-selenium="breadcrumb-region-name"]');
-    hotelData.city = await page.evaluate(el => el.textContent.replace(' Hotels', ''), element);
+    hotelData.city = _.capitalize(
+      new URL(url).pathname
+        .split('/')
+        .pop()
+        .replace('-id.html', '')
+    );
 
     // agoda only supports hotel
     hotelData.category = 'hotel'
@@ -48,10 +53,13 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
 
     hotelData.photos = hotelData.photos.map(img => 'https:' + img);
 
+<<<<<<< HEAD
     await page.waitForSelector('[data-selenium="hotel-header-review-score"]');
     element = await page.$('[data-selenium="hotel-header-review-score"]');
     hotelData.averageRating = await page.evaluate(el => Number(el.textContent.replace(/,/g, '.')) / 2, element);
 
+=======
+>>>>>>> 0bb6f54b631b2e5b18ce8221384fd127b229a7aa
     await page.goto(`${url}?checkIn=${moment().format('YYYY-MM-DD')}&checkOut=${moment().add(1, 'd').format('YYYY-MM-DD')}`)
 
     // check in date
@@ -93,6 +101,8 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
     "isCrawlablePage": true,
     "paginationSize": 5
   })
+
+  hotelData.averageRating = data.combinedReview.score.score / 2;
 
   for (const r of data.commentList.comments) {
     // kata dalam review harus diatas 10 dan belum mencapai max review
@@ -215,7 +225,7 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
 }
 
 export const generatePrompt = async (hotel_name, reviews) => {
-  let result = `These is the reviews for ${hotel_name}:\n`;
+  let result = `These are the reviews for ${hotel_name}:\n`;
   let i = 1;
 
   for (const review of reviews) {
@@ -240,6 +250,41 @@ export const generatePrompt = async (hotel_name, reviews) => {
   return result;
 }
 
-export const gpt3 = async (prompt) => {
+export const formatReviewSummary = async (text, source) => {
+  const result = text.split('\n').filter(t => t).map(t => t.replace(/- /g, ''));
+  if (source === 'agoda') return result;
 
+  const translatedResult = [];
+  for (let t of result) {
+    translatedResult.push(
+      await translate(t, {
+        engine: TRANSLATE_ENGINE,
+        from: 'en',
+        to: 'id',
+        key: process.env.TRANSLATE_KEY,
+      })
+    )
+  }
+  return translatedResult
+}
+
+export const gpt3 = async (prompt, engine = 'davinci') => {
+  const INITIAL_PROMPT = fs.readFileSync('./configs/initialPrompt.txt', 'utf-8');
+
+  const res = await axios.post(`https://api.openai.com/v1/engines/${engine}/completions`, {
+    prompt: INITIAL_PROMPT + prompt,
+    max_tokens: 150,
+    temperature: 0.3,
+    top_p: 1,
+    n: 1,
+    frequency_penalty: 1,
+    stream: false,
+    stop: '###',
+  }, {
+    headers: {
+      Authorization: `Bearer ${process.env.GPT3_KEY}`
+    }
+  })
+
+  return res.data.choices[0].text;
 }
