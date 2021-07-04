@@ -53,13 +53,6 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
 
     hotelData.photos = hotelData.photos.map(img => 'https:' + img);
 
-<<<<<<< HEAD
-    await page.waitForSelector('[data-selenium="hotel-header-review-score"]');
-    element = await page.$('[data-selenium="hotel-header-review-score"]');
-    hotelData.averageRating = await page.evaluate(el => Number(el.textContent.replace(/,/g, '.')) / 2, element);
-
-=======
->>>>>>> 0bb6f54b631b2e5b18ce8221384fd127b229a7aa
     await page.goto(`${url}?checkIn=${moment().format('YYYY-MM-DD')}&checkOut=${moment().add(1, 'd').format('YYYY-MM-DD')}`)
 
     // check in date
