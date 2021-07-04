@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { createHotel, retrieveSpesificHotel, retrieveHotel } from '../handlers/hotel';
+import { createHotel, retrieveSpesificHotel, retrieveHotel, migrateHotel } from '../handlers/hotel';
 import { translateText } from '../handlers/translate';
 import { devHandler } from '../handlers/dev';
 
@@ -11,6 +11,7 @@ globalRouter.route('/hotels/').get(retrieveHotel).post(createHotel);
 
 globalRouter.post('/translate/', translateText);
 
+globalRouter.get('/dev/migrate', migrateHotel);
 globalRouter.get('/dev', devHandler);
 
 export default globalRouter;

@@ -1,0 +1,124 @@
+[
+    {
+        "name": "Fairmont Jakarta",
+        "address": "Jl. Asia Afrika No.8, Gelora, Tanah abang, Gelora, Tanah Abang, Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10270, Indonesia",
+        "handleCovid": true,
+        "city": "Jakarta Pusat",
+        "category": "hotel",
+        "source": "tiket",
+        "photos": [
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/29/2b79bbb5-1bce-43d1-98f0-e6df58d3258a-1603926653826-6ea32c98819338828b10c86444a45c8f.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/29/cc72e66e-dd91-4f20-8d40-aa1071b8cf0c-1603926653396-c8af85259158e6fee91f8be57dfedd3d.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/29/81d30d2a-6454-41c1-bd96-9b4b81b5e514-1603914399728-f9247d0602bb845fb37a521914b63465.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/29/a112ea00-353e-43e2-ae0d-99f0dfa8e16d-1603926682405-5148b33be7a4a147bd162a1356b7fe85.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit00gsm/tix-hotel/images-web/2020/11/16/527706a0-2dec-4829-b978-2574a774a05a-1605541391804-6bcc87727d1e98ac912903a5b89cbdd0.jpg"
+        ],
+        "averageRating": 4.7,
+        "ota": [
+            {
+                "price": 3599750,
+                "provider": "tiket",
+                "link": "https://www.tiket.com/hotel/indonesia/fairmont-jakarta-108001534517544326"
+            }
+        ],
+        "reviews": [
+            {
+                "comment": "Satpam Fairmont pintu masuk dari mall PS tdk sopan, boro2 mengucapkan salam, saat periksa tas belanjaan sampai dirogoh/diaduk aduk. Saya sempat marah. Tdk seperti pengalaman sy di hotel berbintang lain, Satpam mengucapkan salam dan minta ijin secara sopan sebelum periksa tas belanjaan. Dan cara periksanya juga tidak sampai merogoh isi tas.",
+                "name": "Edi Mulyono",
+                "source": "tiket",
+                "reviewDate": "2019-12-20T15:47:12.756Z"
+            },
+            {
+                "comment": "Hotel yang bagus, cuma untuk buffet breakfast ny jadi ala carte by order customer, karena lg pandemi.. nunggu makanan datang agak lama. Krena waiter ny terbatas..",
+                "name": "WS",
+                "source": "tiket",
+                "reviewDate": "2020-07-13T09:36:31.291Z"
+            },
+            {
+                "comment": "Lokasi hotel sangat strategies, kebersihan hotel sangat baik, kamar hotel pun sesuai dengan harganya. \nYang kurang itu lokasi parkiran ",
+                "name": "Fery Ferdinand",
+                "source": "tiket",
+                "reviewDate": "2018-10-26T07:10:35.930Z"
+            },
+            {
+                "comment": "Luar biasa menginap di fairmont,pengalaman saya menginap di fairmont smua staffnya baik",
+                "name": "julyanti feronika",
+                "source": "tiket",
+                "reviewDate": "2020-07-14T19:01:25.979Z"
+            },
+            {
+                "comment": "(+) : Kamar yang disediakan viewnya bagus, kamar bersih, fasilitas hotel seperti ketersediaan air minum dan handuk di dekat kolam renang dan tempat gym selalu tersedia, hot tub nya nyala sampai malam dan nyaman\n(-) : Breakfastnya tidak seperti yang diharapkan dari segi rasa",
+                "name": "PS",
+                "source": "tiket",
+                "reviewDate": "2020-07-06T04:19:18.943Z"
+            }
+        ],
+        "reviewSummary": [
+            "Lokasi yang bagus",
+            "Kamar bersih",
+            "Staf yang ramah",
+            "Fasilitas bagus (kolam renang, gym, hot tub)"
+        ]
+    },
+    {
+        "name": "Raffles Jakarta",
+        "address": "Jl. Prof. DR. Satrio No.28, RT.18/RW.4, Kuningan, Karet Kuningan, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940, Indonesia",
+        "handleCovid": false,
+        "city": "Jakarta Selatan",
+        "category": "hotel",
+        "source": "tiket",
+        "photos": [
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/31/57bacc72-259a-43d9-9a7f-8cb31d3df666-1604150555927-e3938746fc886196e063ab4a40252d15.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/31/7e8725f0-b029-4520-8bf6-9c57c10da5f2-1604150616048-5a757b54faf8481a90df6c059d2d54e5.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/31/6491b29b-b52b-48a8-8277-665d8321216d-1604150556011-2d33aaea2abb1729632ccea1ecd89d8e.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/15/0fd70222-fea1-44c6-8552-ceb21744ae45-1602759950786-249de51f380ebda94e499382d95e5e3c.jpg",
+            "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2020/10/31/d955ac0d-214e-4d34-a3e9-1e0b3faf0507-1604150616080-fce858f2ca7beefc503ba38c4132ad83.jpg"
+        ],
+        "averageRating": 4.8,
+        "ota": [
+            {
+                "price": 3388000,
+                "provider": "tiket",
+                "link": "https://www.tiket.com/hotel/indonesia/raffles-jakarta-108001534517482611"
+            }
+        ],
+        "reviews": [
+            {
+                "comment": "all the services are very good, the hotel staff are so friendly..make me very comfortable during my stay at raffles jakarta..thank you so much especially to Mr.Geri for giving me some sweet surprises..and i really like it..thank you so much raffles Jakarta is always a success for all of us",
+                "name": "Etes Putri Utami",
+                "source": "tiket",
+                "reviewDate": "2020-03-02T07:16:18.837Z"
+            },
+            {
+                "comment": "Terimakasih banyak untuk semua tim hotel Raffles, dari awal check in sampai checkout semua pelayanannya fantastis, ramah dan cepat. Kalau bisa kasih bintang lebih dari lima tentu akan saya berikan untuk hotel ini.\nTentunya akan kembali menginap disini jika ada kesempatan",
+                "name": "Carlos Sebastian",
+                "source": "tiket",
+                "reviewDate": "2021-04-08T11:12:44.940Z"
+            },
+            {
+                "comment": "Great protocol in the room and public area even when hotel was not too crowded. Highly recommended for staycation.",
+                "name": "DW",
+                "source": "tiket",
+                "reviewDate": "2021-04-13T05:03:06.912Z"
+            },
+            {
+                "comment": "Bagus banget service jg bagus krn bs minta breakfast diantar kekamar, cuma pemandangannya saja yg kurang but its ok",
+                "name": "TC",
+                "source": "tiket",
+                "reviewDate": "2021-04-08T05:44:11.323Z"
+            },
+            {
+                "comment": "Saya pesan kamar yang Artis Suite Semalam 5.5jt include makan 2 org \nKamar luas bersih fasilitas lengkap \nView nya bagus dapat lantai tinggi \nMakanan lengkap ada indonesia food dan international bahkan japananese food sushi \nFresh milk dengan 3 varian rasa fresh milk, coklat milk dan strowberry milk\n\nProses check in cepet dengan deposit 1jt\nKemudian pelayanan ramah cepet dan bersih banget",
+                "name": "Monika Simatupang",
+                "source": "tiket",
+                "reviewDate": "2021-04-06T02:11:54.488Z"
+            }
+        ],
+        "reviewSummary": [
+            "Kamar bersih dan luas",
+            "Makanan dan minuman yang enak",
+            "Proses check in cepat dengan deposit 1 juta",
+            "Pelayanan staff ramah yang cepat dan sangat bersih"
+        ]
+    }
+]

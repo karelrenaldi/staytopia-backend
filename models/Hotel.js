@@ -25,7 +25,7 @@ const HotelSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    required: [true, "A hotel must have a name"],
+    required: [true, "A hotel must have a address"],
     trim: true,
   },
   handleCovid: {

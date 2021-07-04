@@ -33,6 +33,15 @@ const validateLink = (url) => {
   throw new Error('invalid url');
 }
 
+export const migrateHotel = async(req, res) => {
+  try{
+    await Hotel.create(req.body);
+    res.json({message: 'success'})
+  }catch(err){
+    res.status(500).json({message : 'error'})
+  }
+}
+
 export const createHotel = async(req, res) => {
   const { url, source } = req.body;
 

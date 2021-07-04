@@ -1,0 +1,292 @@
+[
+  {
+    "name" : "Aryaduta Bandung",
+    "address" : "Jl Sumatera No. 51, Riau, Band ung, Indonesia, 40115",
+    "handleCovid": false,
+    "city" : "Bandung",
+    "category" : "hotel",
+    "source" : "agoda",
+    "photos" : [
+      "https://pix8.agoda.net/hotelImages/1160153/-1/75d227d2f657c6a12a4e19752382a5bc.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/1160153/-1/bb865ef45236bb56fd8f5554036b5c71.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/1160153/-1/a9656e34a186553649d9e998ed0e9ea9.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/1160153/-1/ee5cf11a6f0d4b6bf3efd829aafba200.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/116/1160153/1160153_16091509260046474361.jpg?s=1024x768"
+    ],
+    "averageRating" : 4.25,
+    "ota" : [{"price" : 399999, "provider" : "agoda", "link": "https://www.agoda.com/id-id/aryaduta-bandung/hotel/bandung-id.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1891460&numberOfBedrooms=&familyMode=false&adults=1&children=0&rooms=1&maxRooms=0&checkIn=2021-07-13&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=-1&showReviewSubmissionEntry=false&currencyCode=IDR&isFreeOccSearch=false&tag=b022b8c5-68f3-0f3e-448a-9eae0ef0565f&tspTypes=16&los=1&searchrequestid=b5ab4989-75d7-41c8-b3b7-6cecf119c223"}],
+    "reviews" : [
+      { 
+        "name" : "Madinatul", 
+        "comment" : "I already try to stay in saveral hotels in Bandung. But, Aryaduta Hotel is the best hotel I ever stay in Bandung. Room was spacious, food is delicious. Clean. Strategic area. Walk away in the city. Mall is just next door, and I really appreciates to the staffs. They work so responsive, friendly, and superb. \n\nOnce I got the unclean and untidy room, but they solved the problem very fast and make me satisfied with their responsibility and they always make sure that the guest will be enjoy and comfort to stay.\n\nI like the gym, sauna, and the pool.\n\nTheir barbeque area also very nice. \n\nI always stay in this hotel for business trip or family trip. Also, during romantic time with my love one.\n\nI recommend this hotel with all my heart!!! )))\n\n", 
+        "source" : "agoda"  
+      },          
+      { 
+        "name" : "Qisthi",
+        "comment" : "Stayed here as solo traveller and it offered a lot to enjoy. Located in the heart of Bandung city, it has direct access to Bandung Indah Plaza; a quite decent shopping mall. The food was great, some room types offer free access to the Aryaduta Club/Lounge where you can have nice refreshments- even great wine. The Svargaloka Restaurant also offers nice buffet dinners with reasonable price. Taxis are easy to find, and some parks are within walking distance.\n\nI will definitely come back for another holiday in Bandung.",
+        "source" : "agoda" 
+      },
+      { 
+        "name" : "Yurica",
+        "comment" : "Previously Hyatt Bandung, Aryaduta simply rejuvenate the atmosphere inside. Friendly staffs are the good point of this hotel. Then its also located near Bandung's shopping street (Martadinata/Riau Rd.) and Bandung Indah Plaza mall located just beside the hotel.", 
+        "source" : "agoda"
+      },
+      { 
+        "name" : "Muhammad",
+        "comment" : "This is my second time staying at this hotel. My first stay was beyond my expectation as the hotel upgrade me into a Suite Room which they didnt tell me until i ask the front desk during my stay this time as i am curious that the room that i stay at this time is very much different from the room that i stay for the first. Tq Very Much Aryaduta Hotel for giving me the chance to experience your suite for the price of standard room type. All i can say, everythings at this hotel is excellent, from A to Z. Will stay at this hotel again if i have a chance to visit Bandung in the future.", 
+        "source" : "agoda"  
+      },
+      { 
+        "name" : "Paul", 
+        "comment" : "I stayed here when it was the Hyatt and was a little worried my experience may not be the same under new management.  I was wrong!   Aryaduta Bandung is an excellent, international standard hotel with professional, caring staff.  Meiska in the Aryaduta Club was outstanding and made us feel like royalty.  Highly recommended for a pleasant stay in Bandung at very good value for money.",
+        "source" : "agoda"  
+      }
+    ],
+    "reviewSummary": [
+      "Great location",
+      "Professional, caring staffs",
+      "Delicious food and beverages",
+      "Comfortable and clean room",
+      "Nice swimming pool and fitness room"
+    ]
+  },
+  {
+    "name": "DE BRAGA by ARTOTEL",
+    "address": "Jalan Braga No. 10, Sumurbandung, Bandung, Pusat Kota Bandung, Bandung, Indonesia, 40111",
+    "handleCovid": false,
+    "city": "Bandung",
+    "category": "hotel",
+    "source": "agoda",
+    "photos": [
+      "https://pix8.agoda.net/hotelImages/5596113/-1/ecdbc16342868fe8587215e4915ffe8a.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/5596113/-1/d4fd681371c03868bd022489b5decd26.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/5596113/-1/177d0a0aeea883ad8145c7437875d795.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/5596113/-1/0b0dc9e7d06afa5b886e7d1d61065626.jpg?s=1024x768"
+    ],
+    "averageRating": 4.4,
+    "ota": [
+      {
+        "price": 335782,
+        "provider": "agoda",
+        "link": "https://www.agoda.com/id-id/de-braga-by-artotel/hotel/bandung-id.html"
+      }
+    ],
+    "reviews": [
+      {
+        "comment": "We stayed in De Braga Hotel by Artotel on Oct 17-18, 2020. We were a group of an extended family (with 2 children & a baby), booked 5 rooms.\n\nPros:\n1. Thumbs up for Miss Eka (FO/Reservation). She has succeeded in fulfilling our requests regarding our rooms. All 5 rooms were on the same floor. The baby slept very well & didn't disturb other guests (😇). My family (2 parents & 2 children) did get the connecting rooms. We are really, really satisfied with the room assignments. Thank you very much, Miss Eka 😘\n2. Excellent service, especially regarding the check in. Again, by Miss Eka 👍🏼 We (traveling from Jakarta) arrived at the Hotel at 11 am. Off course, the rooms were not ready so we dropped our luggages and proceed to lunch. At 2.15 pm Miss Eka called my mobile saying that our rooms were ready (which I highly appreciated!).\n3. The location is very city-centric & strategic to most tourist attractions. Great value for money.\n4. I liked (almost) everything about the room. The size was OK (not big but not too small either). The bed was PERFECT with 4 pillows, very comfortable for my backpain. I personally prefer no carpet, I can clearly see the floor was clean. I really loved the open \"wardrobe\", we could vigilantly check our things before departing (minimalized leaving behind our things). Plus, there was a big space to store our shoes.\n\nCons:\n1. When my children & I went to the pool (on Saturday around 4 pm), the area was dirty and there were no staffs around. We found some cigarette butts & leftover food 🤦🏻‍♀️ I know it was done by some irresponsible guests, but that's why there should be a staff watching the area (to warn the naughty guests).\n2. Breakfast time was a disappointment. I didn't mind about the long queue and I understood the staffs were doing their best. I even didn't mind about the average menu. However, for me the biggest flaw is: the food didn't match with the menu displayed on the TV screen. The staff said that it was yesterday's menu. So why did",
+        "name": "Mekar",
+        "source": "agoda",
+        "reviewDate": "2020-10-18T17:00:00.000Z"
+      },
+      {
+        "comment": "Personally, we really like this hotel. Room are quiet spacious (enough for us), great and very welcoming staff. Nice swimming pool can be enjoyed by the kids.\n\nLocation is the main problem, especially when you bring your own car. It is so close to the city center (Braga Street, Alun Alun Bandung) and it is fun to be enjoyed on walking distance.\nBut our trouble come at night, because it take us hours to get to the hotel after our trip to Dago Pakar area. We can't park the car somewhere because the kids are sleeping. I think we take 50m for about 25-30 minutes!\nBut once again, we are not blaming it to the hotel. It just Jalan Braga is too packed to be taken by car. \n\nSo, we can stay that it is a great hotel if you are traveling with bigger kids, or just as a couple or even alone. But if you are family with small kids and bring your own car, I would suggest to reconsider the option.\n\nBut once again, despite the bad traffic, we had a very pleasant time at the hotel. Thank you!",
+        "name": "Grace",
+        "source": "agoda",
+        "reviewDate": "2019-09-30T17:00:00.000Z"
+      },
+      {
+        "comment": "Located very near to Braga street makes this hotel close to entertainment and food. You can easily goes around Jalan Asia Afrika by foot and take some memorable pictures there.\n\nThe hotel itself has a spacious room, and very clean. They use King Koil to guarantee that you'll have a comfort bed to rest after exploring Bandung.\n\nCheck in and check out are very easy, they handle your reservation as personal as they can be. The staff are very friendly and dont worry they speak English fluently.\n\nThey also have a coffee and bar, that provide interesting entertainment. Very nice to seat there accompanied by a glass of wine while listening a good music.\n\nVery recommended hotel. Surely will be back here again",
+        "name": "Bunga",
+        "source": "agoda",
+        "reviewDate": "2020-03-03T17:00:00.000Z"
+      },
+      {
+        "comment": "Stayed 4D3N in De Braga for our pre-honeymoon. Good hospitality, great location and staff were super friendly (greet us everytime we bump into each other at the lobby)! Everything is a few mins away from hotel. Had dinner on our last day,and it was nice and the price is very affordable. Would definitely stay here again whenever we go to Bandung. Keep it up!",
+        "name": "Siti",
+        "source": "agoda",
+        "reviewDate": "2019-02-06T17:00:00.000Z"
+      },
+      {
+        "comment": "De Braga postion on very strategic location, you can explore natural Bandung building and food from this street. Front staff very helpful (name is Agung), he is so professional and nice with all quest. Need to improve on restaurant area, when breakfast he ask room number to validate over and over, make us and other quest uncomfortable. \n\nHotel facilities overall good, design interior is cozy.",
+        "name": "Agung",
+        "source": "agoda",
+        "reviewDate": "2019-01-02T17:00:00.000Z"
+      }
+    ],
+    "reviewSummary": [
+      "Great location",
+      "Nice and cozy design interior",
+      "Friendly staffs",
+      "Good hospitality"
+    ]
+  },
+  {
+    "name": "Hilton Bandung",
+    "address": "H.O.S Tjokroaminoto Road No. 41-43, Bandung Airport, Bandung, Indonesia, 40172",
+    "handleCovid": false,
+    "city": "Bandung",
+    "category": "hotel",
+    "source": "agoda",
+    "photos": [
+      "https://pix8.agoda.net/hotelImages/194479/0/b3c2db23bbfadbfa88a2d6aa2c945d73.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/2290409/15410588/9172b53b86a4658bc4b579948283a22b.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/194479/-1/34338a93d710eb526461b1adc709d9c5.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/194479/0/e80561803ac42b7b168c8823d197e003.jpg?s=1024x768"
+    ],
+    "averageRating": 4.4,
+    "ota": [
+      {
+        "price": 575000,
+        "provider": "agoda",
+        "link": "https://www.agoda.com/hilton-bandung_12/hotel/bandung-id.html"
+      }
+    ],
+    "reviews": [
+      {
+        "comment": "We always return to Hilton every single time we come to Bandung. We could always look forward to clean and spacious Bed, Bedroom and Bathroom to pamper our stay.\r\n\r\nWhen asked for hotel reviews by the Ambassador during breakfast, our answers (since the past 2 years) remained the same : Please provide locks for the sliding bathroom door, and please ensure fast wi-fi connection in-room. \r\n\r\nOn the minus side, the room price had increased quite a bit, whereas similar 5-star hotels still maintained their prices and even added extra services like 3 free minibar items, etc. Sometimes, we even received phone calls from several 5-star hotels offering annual membership which we have yet to try..\r\n\r\nThe swimming pool was also closed the day on our stay. A tad disappointing for our kids..\r\n\r\nNevertheless, it is always a pleasant experience \"sleeping off\" at Hilton Bandung.\r\n\r\nSee you again next time with hefty promotional discounts for us ;)\r\nOkay mate?",
+        "name": "Henny",
+        "source": "agoda",
+        "reviewDate": "2015-10-01T17:00:00.000Z"
+      },
+      {
+        "comment": "the first reason why i booked this hotel because of the customer reviews. hilton bandung received the highest rating among the other hotel in the city. of course, i expected to receive the same experiences as the other guests had make comments about this hotel. to be honest, i also had some worries that my stay will turn to be a worse decision.\r\nand \"the day\" had finally come. the moment i arrived at the hotel, i was greeted warmly by all the front door and the front office staffs. they helped unload my family luggage out the car. the check-in went smoothly and fast, no hassle at all. based of these actions, i gained some confident, that i didn't make a false decision by choosing to stay at this hotel. then i went up to my room with my family, and found my room to be as exactly as i pictured it from the website. the room was modern, stylist and nicely decorated. all room facilities were in a large size. it had two large and very comfy queen-size beds, a large and clean bathroom with towels and fully stock amenities, a large lcd screen, a large working desk area, a large cupboard and a cabinet with refrigerator with also fully stock minibar items. what a great room that i could tell. following day, i went down for breakfast, and this was one of the great breakfast i ever tasted at the hotel. a lot varieties of food and drink. everything was a mouth-watering, spread from indonesian, western, thru chinese dishes. \r\nthe swimming pool was nicely constructed and also very inviting with numbers of gazebo at the edge, so the adult can watch their children activities. \r\nbut all of these fantastic features of the hotel was the staff. they gave what you call a true hospitality. they really enjoyed their works. from the porters, the receptionists, the engineers, the room attendants and the waiters. very attentive, polite, and always greet and smile. not just a fake smile but they smiled from their heart.\r\nif i have a time to go to bandung, i definitely will back to this hotel",
+        "name": "RIOADI",
+        "source": "agoda",
+        "reviewDate": "2012-02-16T17:00:00.000Z"
+      },
+      {
+        "comment": "this is great services hotel ever in bandung ! even the access to this hotel rather crawd / trafficjam near railway station . i said great service when i booked to agoda for 2 queen hilton deluxe breakfast super sale actually from agoda is room only ( rather disappointed me with the word breakfast super sale ), but when i ask to the front desk officer they said that they gave us include 2 breakfast thanks hilton.\r\nbed room is big clean ,nice for family and they give prime view to the pool & top hill of bandung ( beautiful view )every employees very nice, helpfull with honest smile when we ask suggestion about the way to some location in bandung, i think hilton management success to make them understand that excellent services is their life ( if the hotel without best services ,so guest will not return and telling bad image that make that hotel can be colapse )   ",
+        "name": "Tirta",
+        "source": "agoda",
+        "reviewDate": "2012-08-22T17:00:00.000Z"
+      },
+      {
+        "comment": "We booked the premier double queen room as usual as we always love the executive floor lounge. We arrived at the hotel around 3 PM. The room was not ready and we had to wait for almost 2 hours. \r\n\r\nIt was one of the long weekends so we understand the delay. The room was located in the smoking floor (we request for the non smoking room). However, the room is perfectly smell free.\r\n\r\nHilton Bandung recently introduced its new Kids club with many activities located in the 6th floor which we think is a very nice touch for hotel guests which mostly travels with families during the weekend.\r\n\r\nLounge drinks and snacks are great.. We also love the bathroom amenities (so thrilled to find a \"massaging bar soap\" in one of them). Ordered several room services and none of the meals are disappointing.\r\n\r\nGreat stay overall. We would and we had recommended Hilton Bandung to our families and friends.\r\n\r\nWould love to come back again soon! \r\n",
+        "name": "Wendy",
+        "source": "agoda",
+        "reviewDate": "2012-12-31T17:00:00.000Z"
+      },
+      {
+        "comment": "we arrived on saturday evening under heavy room and after terrible traffic from jakarta. after the car was being taken care of by the vallet service, we approaced to the receptionist on the lobby. in a minute after we handed in the booking confirmation letter, a lady took us to the 11th floor for an executive check in. when we arrived in the lounge for a check in, we saw the other guests were eating from the buffet spree for free (not a small hot snacks like the other hotels in bali offer for the executive guests). since we had agreed to have dinner in purnawarman restaurant @ the lobby, we didnt try any of the free dinner although quite mouth watering for a quite full tummy like ours. then at 8, we had a buffet dinner @ purnawarman and it was worth it! rp. 270.000,00 + 21% tax for 2 person and with a lot of varieties of great food!even the salmon for sashimi (despite the freshness of seafood quality in bandung), was excellent! in the morning, we had also a marvelous breakfast at the same place, then off to the pool since my daughter couldnt stop talking about it. she got a free puzzle, cookies, and got various offers to join kids' activity at the hotel. it was a pleasant stay in hilton bandung and we'll be definitely like to stay there when in bandung!",
+        "name": "Sophia",
+        "source": "agoda",
+        "reviewDate": "2012-12-25T17:00:00.000Z"
+      }
+    ],
+    "reviewSummary": [
+      "Great service",
+      "Excellent food",
+      "Big and clean room",
+      "Nice swimming pool and kids' activity area"
+    ]
+  },
+  {
+    "name": "Janevalla Bandung",
+    "address": "Jalan Aceh No.65, Riau, Bandung, Indonesia, 40115",
+    "handleCovid": false,
+    "city": "Bandung",
+    "category": "hotel",
+    "source": "agoda",
+    "photos": [
+      "https://pix8.agoda.net/hotelImages/4899301/-1/d43b27a5c12dd490d24d66cc9aca7d9d.jpg?s=1024x768",
+      "https://q-xx.bstatic.com/xdata/images/hotel/840x460/136852044.jpg?k=b521c383409bdfebccc074c9103d96f5b864460f7e55147479ffaeeeb155715e&o=",
+      "https://pix8.agoda.net/hotelImages/4899301/-1/5838e0ee1d96a2d1e526dc7e5add2f95.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/4899301/0/71b6c6298e6d7cc559d35d96e6bc697e.jpg?s=1024x768"
+    ],
+    "averageRating": 4.4,
+    "ota": [
+      {
+        "price": 450697,
+        "provider": "agoda",
+        "link": "https://www.agoda.com/id-id/u-janevalla-bandung_2/hotel/bandung-id.html"
+      }
+    ],
+    "reviews": [
+      {
+        "comment": "Stayed at U Janevalla Bandung for 2 nights and throughout the 2 nights there we had a wonderful experience. Despite it just being a boutique hotel, the staff especially Mr Virdi had ‘5 star’ attitude and hospitality. This was what made us stay an additional night. We were supposed to stay for only a night, however we chose to extend because of the warm hospitality by all the staffs. \nWe had a opportunity to chat and have drinks with the G.M (Mr. Jim) of the hotel and it was nice to meet another fellow Malaysian in Bandung. Mr Jim showed us what true hospitality was by extending his valuable time to sit and interact with us despite having a busy schedule. \nThe food was fantastic and the breakfast buffet spread was remarkable. Many choices to choose from western to indonesian cuisine. Dessert spread was wonderful too. Quality food for sure! The room was big and spacious with our own private balcony with a stunning view of the city! \nWill definitely stay at U Janevalla the next time we visit Bandung as it definitely left an impact on us. Wonderful hotel, staff, location and quality food!! ",
+        "name": "Julian",
+        "source": "agoda",
+        "reviewDate": "2019-10-30T17:00:00.000Z"
+      },
+      {
+        "comment": "1. Location\nStrategic. Center of Bandung. Foods (Mcd, Fried Chicken, Pizza, Burger King, Ramen), all around the hotel. Mini market, in front of the hotel. Mall (Bandung Indah Plaza) behind the hotel. And for sure, all what you need for staying, you can find inside the mall, if you want to.\n\n2. Hospitality\nThe security, Parking/Vallet staff, Reception, Housekeeping, Restaurant staff. They are helpful and guide us about everything. They are very nice and kind staff.\n\n3. Room & Bathroom\nCozy, simple design, spacious enough, large bed size for twin bed (enough for two people), bathroom hot&cold water with 2 kind of shower (portable like usual and fix shower on the ceiling). They provide 2 kind of aromatic soap. They provide espresso machine + esprosso coffee inside the room, also for kettle and tea.\nNB : tea flavor and aromatic flavor, you can choose while you're check in.\n\n4. Breakfast\nThey have nice food for breakfast. Kind of bread, Toast, Pastry, Cerelas, choice of milk, coffee machine, choice of tea, choice of juices, salad (choice of dressing), fruits, omellete, fishball soup and indonesian food such as liwet rice, fried rice, sauteed vegetables, chicken, tofu, rice noodle, oncom, fish rollade, sambal and they provide chicken porrige as well.\n\n5.  Cafe & Pool\nOn the rooftop, 9th floor. Perfect view to see all around from above. Cafe's food lil'bit pricey.\n\nI'll be back and be in this Hotel for Bandung trip next. Didn't regret it at all.\nKeep the good work, cheers!",
+        "name": "Swandini",
+        "source": "agoda",
+        "reviewDate": "2018-08-06T17:00:00.000Z"
+      },
+      {
+        "comment": "Less than 5 minutes walk to Bandung Indah Plaza and near Riau Factory Outlets. Rooms are quite spacious and nice. Would be good if each room is given iron and ironing board instead of requesting it every day. Breakfast menu was the same throughout our stay.\n\nBest service from the staffs. Super friendly and helpful. Will definitely be back in this hotel if we're in Bandung.",
+        "name": "Siti",
+        "source": "agoda",
+        "reviewDate": "2019-09-11T17:00:00.000Z"
+      },
+      {
+        "comment": "I stayed for two nights and it was my second visit to U Janevalla. The staff members were friendly and helpful. I requested to switch the room and got assigned a room with windows overlooking the city, which was great. The interior design was amazing and stylish. However, there weren't plenty of TV channels available. The brekkie was okay, though the portion was somewhat smaller than expected. Overall, the stay was pleasant and I would love to come back again in the future. ",
+        "name": "Abdurrahman",
+        "source": "agoda",
+        "reviewDate": "2020-07-03T17:00:00.000Z"
+      },
+      {
+        "comment": "Pros : location city center. Behind the hotel already Bandung Indah Plaza.  Good choice of breakfast. They served Indomie in the morning too :). Have rooftop swimming pool. Nice little things they provided such as free 2 bottles softdrink as welcome drink, can select the hand soap flavour and tea flavour to bring in our room. \n\nCons : The parking space limited. Morning time lobby mostly full of car. \nSwimming pool also not big and deep enough. If many ppl there already feel like full and cannot really swimm.  Because mostly ppl just playing and do photo shoot there. Quite annoying for those who really want to swimm and enjoy the pool. ",
+        "name": "Julianita",
+        "source": "agoda",
+        "reviewDate": "2019-11-01T17:00:00.000Z"
+      }
+    ],
+    "reviewSummary": [
+      "Good location",
+      "Nice breakfast",
+      "Free 2 bottles softdrink as welcome drink, can select the hand soap flavour and tea flavour to bring in our room."
+    ]
+  },
+  {
+    "name": "Swiss-Belresort Dago Heritage",
+    "address": "Lapangan Golf Dago Atas No.78, Cigadung, Kec. Cibeunying Kaler, Kota Bandung, Jawa Barat, Dago, Bandung, Indonesia, 40135",
+    "handleCovid": false,
+    "city": "Bandung",
+    "category": "hotel",
+    "source": "agoda",
+    "photos": [
+      "https://pix8.agoda.net/hotelImages/9119744/-1/c175c65167c36138d3fbc951743967dc.jpg?s=1024x768",
+      "https://q-xx.bstatic.com/xdata/images/hotel/840x460/307400960.jpg?k=700a3975a2f11157d8b1c691c91fbb6a0d60726be3f2aff9a09dc48a5b633d69&o=",
+      "https://pix8.agoda.net/hotelImages/9119744/-1/64e401f724d4d9cb4bba0f760faabc14.jpg?s=1024x768",
+      "https://pix8.agoda.net/hotelImages/9119744/-1/3c08adabdc6eee8cfe3e9158da9365c7.jpg?s=1024x768"
+    ],
+    "averageRating": 4.15,
+    "ota": [
+      {
+        "price": 813306,
+        "provider": "agoda",
+        "link": "https://www.agoda.com/id-id/swiss-belresort-dago-heritage/hotel/bandung-id.html"
+      }
+    ],
+    "reviews": [
+      {
+        "comment": "Having great time to staycation during pandemic at Swiss-Belresort Dago Heritage Bandung. Swimming pool air hangat, pemandangan kota Bandung dari atas Dago, penerapan protocol Covid tetapi tetap membuat kita nyaman. will be back real soon!",
+        "name": "Ika",
+        "source": "agoda",
+        "reviewDate": "2020-10-04T17:00:00.000Z"
+      },
+      {
+        "comment": "One thing that need to improve is the bed sheet as it wasn’t clean enough. But if you need to find a place to relax and enjoy your time Swiss-Belresort Dago Heritage  is a best place. ",
+        "name": "Lie",
+        "source": "agoda",
+        "reviewDate": "2021-01-31T17:00:00.000Z"
+      },
+      {
+        "comment": "Golf facilites view behind and city view in the opposite, combine with fresh air, since the hotel stand in one of the highest point in Bandung.\nLot of good drinks we can get in D'peak Connisseurs down there near the Lobby",
+        "name": "Julius",
+        "source": "agoda",
+        "reviewDate": "2020-10-12T17:00:00.000Z"
+      },
+      {
+        "comment": "The furniture it’s out of date, especially the bathroom, there is lot of mildews in the sink, and it’s quite noisy (i heard busy sounds upstairs which is really disturbing).\nBeside that the food is nice and the pool is warm, very good.",
+        "name": "Nurulliana",
+        "source": "agoda",
+        "reviewDate": "2019-10-19T17:00:00.000Z"
+      },
+      {
+        "comment": "nice hotel, at Dago, so have a nice weather, far from traffic jam, recomended hotel",
+        "name": "Wenny",
+        "source": "agoda",
+        "reviewDate": "2020-08-25T17:00:00.000Z"
+      }
+    ],
+    "reviewSummary": [
+      "Nice weather",
+      "Good food",
+      "Nice swimming pool and golf facilities",
+      "Out of date furniture in the room"
+    ]
+  }
+]
