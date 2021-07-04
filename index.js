@@ -26,7 +26,7 @@ const main = () => {
         message: 'Not Found!'
       }
     })
-  })
+  });
 
   mongoose.connect(process.env.ATLAS_SERVER, { 
     useNewUrlParser: true,
@@ -43,7 +43,7 @@ const main = () => {
     });
   }).catch(() => {
     console.log('Failed connect to database');
-  })
+  });
 }
 
 main();
