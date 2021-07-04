@@ -84,7 +84,7 @@ export const createHotel = async(req, res) => {
     }
 
     const prompt = await generatePrompt(hotel.name, hotel.reviews);
-    const summary = await gpt3(prompt, 'curie');
+    const summary = await gpt3(prompt, 'davinci');
 
     hotel.reviewSummary = await formatReviewSummary(summary, source);
 
