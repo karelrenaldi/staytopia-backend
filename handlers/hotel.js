@@ -197,7 +197,7 @@ export const getRecommendationHotel = async (req, res) => {
     });
   }
 
-  const formattedQuery = query.map(q => '- ' + q).join('\n')
+  const formattedQuery = JSON.parse(query).map(q => '- ' + q).join('\n')
 
   const recommendedHotels = await recommendation(formattedQuery, 'babbage');
 
