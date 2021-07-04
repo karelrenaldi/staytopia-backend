@@ -64,6 +64,7 @@ const HotelSchema = new mongoose.Schema({
     reviewDate: Date,
   }],
   reviewSummary: [String],
+  summaryFileId: String,
   createdAt: {type: Date, default: Date.now()},
 });
 

@@ -2,7 +2,7 @@ import mongodb from 'mongodb';
 
 import Hotel, { isHotel } from '../models/Hotel';
 import { DEFAULT_PAGE, API_VERSION, DEFAULT_LIMIT, TIKET_MAX_REVIEW, AGODA_MAX_REVIEW } from '../configs/server';
-import { formatReviewSummary, generatePrompt, gpt3, scrapAgoda, scrapTiket } from '../service';
+import { formatReviewSummary, generatePrompt, gpt3, scrapAgoda, scrapTiket, uploadSummary } from '../service';
 
 const { ObjectID } = mongodb;
 
@@ -89,6 +89,8 @@ export const createHotel = async(req, res) => {
     hotel.reviewSummary = await formatReviewSummary(summary, source);
 
     const hotelDocument = await Hotel.create(hotel)
+
+    await uploadSummary(`${hotelDocument._id}.jsonl`, hotelDocument.reviewSummary)
 
     return res.json({
       apiVersion: API_VERSION,
