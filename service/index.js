@@ -3,6 +3,7 @@ import axios from 'axios';
 import moment from 'moment';
 import puppeteer from 'puppeteer';
 import translate from 'translate';
+import _ from 'lodash';
 import { TRANSLATE_ENGINE } from '../configs/server';
 
 export const scrapAgoda = async (url, maxReviewCount = 5) => {
@@ -33,9 +34,12 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
 
     hotelData.handleCovid = false;
 
-    await page.waitForSelector('[data-selenium="breadcrumb-region-name"]');
-    element = await page.$('[data-selenium="breadcrumb-region-name"]');
-    hotelData.city = await page.evaluate(el => el.textContent.replace(' Hotels', ''), element);
+    hotelData.city = _.capitalize(
+      new URL(url).pathname
+        .split('/')
+        .pop()
+        .replace('-id.html', '')
+    );
 
     // agoda only supports hotel
     hotelData.category = 'hotel'
@@ -48,10 +52,6 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
     );
 
     hotelData.photos = hotelData.photos.map(img => 'https:' + img);
-
-    await page.waitForSelector('[data-selenium="hotel-header-review-score"]');
-    element = await page.$('[data-selenium="hotel-header-review-score"]');
-    hotelData.averageRating = await page.evaluate(el => Number(el.textContent.replace(/,/g, '.')) / 2, element);
 
     await page.goto(`${url}?checkIn=${moment().format('YYYY-MM-DD')}&checkOut=${moment().add(1, 'd').format('YYYY-MM-DD')}`)
 
@@ -94,6 +94,8 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
     "isCrawlablePage": true,
     "paginationSize": 5
   })
+
+  hotelData.averageRating = data.combinedReview.score.score / 2;
 
   for (const r of data.commentList.comments) {
     // kata dalam review harus diatas 10 dan belum mencapai max review
