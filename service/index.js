@@ -138,9 +138,13 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
     element = await page.$('.location-address .line-clamp-2');
     hotelData.address = await page.evaluate(el => el.textContent, element);
 
-    await page.waitForSelector('.tiket-info-slider-wrapper');
-    element = await page.$('.tiket-info-slider-wrapper');
-    hotelData.handleCovid = element ? true : false;
+    try {
+      await page.waitForSelector('.tiket-info-slider-wrapper', { timeout: 2000 });
+      element = await page.$('.tiket-info-slider-wrapper');
+      if (element) hotelData.handleCovid = true;
+    } catch (error) {
+      hotelData.handleCovid = false;
+    }
 
     await page.waitForSelector('.location');
     element = await page.$('.location');
