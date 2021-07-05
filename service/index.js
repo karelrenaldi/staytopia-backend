@@ -20,7 +20,7 @@ export const scrapAgoda = async (url, maxReviewCount = 5) => {
 
   // get general data
   try {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(url);
 
@@ -133,7 +133,7 @@ export const scrapTiket = async (url, maxReviewCount = 5) => {
 
   // get general data
   try {
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(url);
 
